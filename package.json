@@ -1,0 +1,13 @@
+{
+  "name": "pi-web-search",
+  "version": "1.0.0",
+  "description": "A pi extension that adds a web_search tool powered by Parallel AI",
+  "type": "module",
+  "license": "MIT",
+  "pi": {
+    "extensions": ["./index.ts"]
+  },
+  "dependencies": {
+    "parallel-web": "latest"
+  }
+}
