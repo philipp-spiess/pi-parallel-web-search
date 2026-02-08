@@ -63,7 +63,7 @@ export default function (pi: ExtensionAPI) {
   pi.registerTool({
     name: "web_search",
     label: "Web Search",
-    description: `Search the web for current information using Parallel AI. Use this when you need up-to-date information that may not be in your training data, such as recent news, documentation, product releases, or current events. Output is truncated to ${DEFAULT_MAX_LINES} lines or ${formatSize(DEFAULT_MAX_BYTES)}.`,
+    description: `Search the web for current information. Use this when you need up-to-date information that may not be in your training data, such as recent news, documentation, product releases, or current events. Output is truncated to ${DEFAULT_MAX_LINES} lines or ${formatSize(DEFAULT_MAX_BYTES)}.`,
     parameters: WebSearchParams,
 
     async execute(_toolCallId, params, signal, onUpdate) {
