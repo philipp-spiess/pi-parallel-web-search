@@ -5,17 +5,20 @@ A [pi](https://github.com/badlogic/pi) extension that adds a `web_search` tool p
 ## Setup
 
 1. Get an API key from [platform.parallel.ai](https://platform.parallel.ai/home) — you get **$80 of free credits** (~16,000 web searches)
+
 2. Set the `PARALLEL_API_KEY` environment variable:
    ```bash
    export PARALLEL_API_KEY=your-api-key
    ```
-3. Copy this extension to your pi extensions directory:
+
+3. Install the package:
    ```bash
-   cp -r . ~/.pi/agent/extensions/web-search
-   cd ~/.pi/agent/extensions/web-search
-   npm install
+   pi install npm:pi-parallel-web-search
    ```
+
 4. Reload pi with `/reload` or restart it
+
+That's it! The `web_search` tool is now available to the LLM.
 
 ## Usage
 
