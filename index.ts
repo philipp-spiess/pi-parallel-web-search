@@ -6,12 +6,6 @@
  */
 
 import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
-import {
-  DEFAULT_MAX_BYTES,
-  DEFAULT_MAX_LINES,
-  formatSize,
-  truncateHead,
-} from "@mariozechner/pi-coding-agent";
 import { Text } from "@mariozechner/pi-tui";
 import { Type } from "@sinclair/typebox";
 import Parallel from "parallel-web";
@@ -63,7 +57,7 @@ export default function (pi: ExtensionAPI) {
   pi.registerTool({
     name: "web_search",
     label: "Web Search",
-    description: `Search the web for current information. Use this when you need up-to-date information that may not be in your training data, such as recent news, documentation, product releases, or current events. Output is truncated to ${DEFAULT_MAX_LINES} lines or ${formatSize(DEFAULT_MAX_BYTES)}.`,
+    description: "Search the web for current information. Use this when you need up-to-date information that may not be in your training data, such as recent news, documentation, product releases, or current events.",
     parameters: WebSearchParams,
 
     async execute(_toolCallId, params, signal, onUpdate) {
@@ -132,7 +126,7 @@ export default function (pi: ExtensionAPI) {
       }
 
       // Format results
-      const formatted = results
+      const resultText = results
         .map((r: any, i: number) => {
           const parts = [`## Result ${i + 1}`];
           if (r.title) parts.push(`**Title:** ${r.title}`);
@@ -143,19 +137,6 @@ export default function (pi: ExtensionAPI) {
           return parts.join("\n");
         })
         .join("\n\n---\n\n");
-
-      // Truncate if needed
-      const truncation = truncateHead(formatted, {
-        maxLines: DEFAULT_MAX_LINES,
-        maxBytes: DEFAULT_MAX_BYTES,
-      });
-
-      let resultText = truncation.content;
-
-      if (truncation.truncated) {
-        resultText += `\n\n[Output truncated: showing ${truncation.outputLines} of ${truncation.totalLines} lines`;
-        resultText += ` (${formatSize(truncation.outputBytes)} of ${formatSize(truncation.totalBytes)}).]`;
-      }
 
       return {
         content: [{ type: "text", text: resultText }],
