@@ -1,4 +1,4 @@
-# pi-web-search
+# pi-parallel-web-search
 
 A [pi](https://github.com/badlogic/pi) extension that adds a `web_search` tool powered by [Parallel AI](https://www.parallel.ai/). Lets the LLM search the web for up-to-date information like recent news, documentation, product releases, or current events.
 
