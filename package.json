@@ -11,7 +11,8 @@
   "pi": {
     "extensions": [
       "./index.ts"
-    ]
+    ],
+    "image": "https://cdn.jsdelivr.net/npm/pi-parallel-web-search@latest/screenshot.png"
   },
   "dependencies": {
     "parallel-web": "latest"
