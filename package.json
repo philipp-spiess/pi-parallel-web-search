@@ -4,6 +4,7 @@
   "description": "A pi extension that adds a web_search tool powered by Parallel AI",
   "type": "module",
   "license": "MIT",
+  "keywords": ["pi-package", "pi-extension"],
   "pi": {
     "extensions": ["./index.ts"]
   },
