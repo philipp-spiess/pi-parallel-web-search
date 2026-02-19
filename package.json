@@ -1,6 +1,6 @@
 {
   "name": "pi-parallel-web-search",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A pi extension that adds a web_search tool powered by Parallel AI",
   "type": "module",
   "license": "MIT",
