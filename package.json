@@ -1,6 +1,6 @@
 {
   "name": "pi-parallel-web-search",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A pi extension that adds a web_search tool powered by Parallel AI",
   "type": "module",
   "license": "MIT",
@@ -15,6 +15,9 @@
     "image": "https://cdn.jsdelivr.net/npm/pi-parallel-web-search@latest/screenshot.png"
   },
   "dependencies": {
+    "@mariozechner/pi-coding-agent": "*",
+    "@mariozechner/pi-tui": "*",
+    "@sinclair/typebox": "*",
     "parallel-web": "latest"
   }
 }
